@@ -4,7 +4,7 @@ from models.subNets import BertTextEncoder
 from torch.autograd import Function
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 import torch.nn.functional as F
-__all__ = ['MISA']
+__all__ = ['DIMCN']
 
 class ReverseLayerF(Function):
 
