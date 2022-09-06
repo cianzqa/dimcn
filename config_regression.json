@@ -1,0 +1,91 @@
+{
+  "datasetCommonParams": {
+    "dataset_root_dir": "/home/nlp306/Data/User_file/zqa/dataset/zqa/",
+    "mosi": {
+      "aligned": {
+        "featurePath": "mosi_aligned_50_zqa_1.pkl",
+        "seq_lens": [50, 50, 50],
+        "feature_dims": [768, 5, 20],
+        "train_samples": 1284,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      },
+      "unaligned": {
+        "featurePath": "mosi_unaligned_50_zqa_1.pkl",
+        "seq_lens": [50, 50, 50],
+        "feature_dims": [768, 5, 20],
+        "train_samples": 1284,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      }
+    },
+    "mosei": {
+      "aligned": {
+        "featurePath": "mosei_aligned_50_zqa_1.pkl",
+        "seq_lens": [50, 50, 50],
+        "feature_dims": [768, 74, 35],
+        "train_samples": 16326,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      },
+      "unaligned": {
+        "featurePath": "mosei_unaligned_50_zqa_1.pkl",
+        "seq_lens": [50, 500, 375],
+        "feature_dims": [768, 74, 35],
+        "train_samples": 16326,
+        "num_classes": 3,
+        "language": "en",
+        "KeyEval": "Loss"
+      }
+    }
+  },
+  "dimcn": {
+    "commonParams": {
+      "need_data_aligned": false,
+      "need_model_aligned": false,
+      "use_finetune": true,
+      "use_bert": true,
+      "early_stop": 8,
+      "update_epochs": 2
+    },
+    "datasetParams": {
+      "mosi": {
+        "batch_size": 32,
+        "learning_rate": 0.0001,
+        "hidden_size": 128,
+        "dropout": 0.2,
+        "m_weight": 0.1,
+        "t_weight": 0.1,
+        "a_weight": 0.1,
+        "v_weight": 0.1,
+        "num": 5,
+	"sim_weight": 1.0,
+        "sp_weight": 1.0,
+        "grad_clip": 0.8,
+        "weight_decay": 0.0,
+        "transformers": "bert",
+        "pretrained": "bert-base-uncased"
+      },
+      "mosei": {
+        "batch_size": 64,
+        "learning_rate": 0.0001,
+        "hidden_size": 64,
+        "dropout": 0.5,
+	    "m_weight": 0.7,
+        "t_weight": 0.7,
+        "a_weight": 0.7,
+        "v_weight": 0.9,
+        "num": 5,
+        "sim_weight": 1.0,
+        "sp_weight": 0,
+        "grad_clip": 1.0,
+        "weight_decay": 5e-5,
+        "transformers": "bert",
+        "pretrained": "bert-base-uncased"
+      }
+    }
+  }
+}
